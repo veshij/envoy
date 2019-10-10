@@ -138,10 +138,10 @@ void ConnectionManagerImpl::initializeReadFilterCallbacks(Network::ReadFilterCal
     connection_idle_timer_->enableTimer(config_.idleTimeout().value());
   }
 
-  if (config_.connectionLifetimeTimeout()) {
+  if (config_.lifetimeTimeout()) {
     connection_idle_timer_ = read_callbacks_->connection().dispatcher().createTimer(
         [this]() -> void { onConnectionLifetimeTimeout(); });
-    connection_idle_timer_->enableTimer(config_.connectionLifetimeTimeout().value());
+    connection_idle_timer_->enableTimer(config_.lifetimeTimeout().value());
   }
 
   read_callbacks_->connection().setDelayedCloseTimeout(config_.delayedCloseTimeout());
