@@ -114,7 +114,7 @@ public:
   bool preserveExternalRequestId() const override { return false; }
   absl::optional<std::chrono::milliseconds> idleTimeout() const override { return idle_timeout_; }
   absl::optional<std::chrono::milliseconds> lifetimeTimeout() const override {
-    return lifetime_timeout_; 
+    return lifetime_timeout_;
   }
   uint32_t maxRequestHeadersKb() const override { return max_request_headers_kb_; }
   uint32_t maxRequestHeadersCount() const override { return max_request_headers_count_; }

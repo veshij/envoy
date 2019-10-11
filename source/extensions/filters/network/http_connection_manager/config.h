@@ -109,7 +109,7 @@ public:
   uint32_t maxRequestHeadersCount() const override { return max_request_headers_count_; }
   absl::optional<std::chrono::milliseconds> idleTimeout() const override { return idle_timeout_; }
   absl::optional<std::chrono::milliseconds> lifetimeTimeout() const override {
-    return lifetime_timeout_; 
+    return lifetime_timeout_;
   }
   std::chrono::milliseconds streamIdleTimeout() const override { return stream_idle_timeout_; }
   std::chrono::milliseconds requestTimeout() const override { return request_timeout_; }

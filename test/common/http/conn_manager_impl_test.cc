@@ -270,7 +270,9 @@ public:
   uint32_t maxRequestHeadersKb() const override { return max_request_headers_kb_; }
   uint32_t maxRequestHeadersCount() const override { return max_request_headers_count_; }
   absl::optional<std::chrono::milliseconds> idleTimeout() const override { return idle_timeout_; }
-  absl::optional<std::chrono::milliseconds> lifetimeTimeout() const override { return lifetime_timeout_; }
+  absl::optional<std::chrono::milliseconds> lifetimeTimeout() const override {
+    return lifetime_timeout_;
+  }
   std::chrono::milliseconds streamIdleTimeout() const override { return stream_idle_timeout_; }
   std::chrono::milliseconds requestTimeout() const override { return request_timeout_; }
   std::chrono::milliseconds delayedCloseTimeout() const override { return delayed_close_timeout_; }
@@ -2552,8 +2554,6 @@ TEST_F(HttpConnectionManagerImplTest, LifetimeTimeoutBasic) {
 
   EXPECT_EQ(1U, stats_.named_.downstream_cx_lifetime_timeout_.value());
 }
-
-
 
 TEST_F(HttpConnectionManagerImplTest, IntermediateBufferingEarlyResponse) {
   InSequence s;
