@@ -277,7 +277,7 @@ message HttpConnectionManager {
   // instead.
   google.protobuf.Duration idle_timeout = 11 [deprecated = true];
 
-  // The maximum lifetime of downstream connection. The lifeteime timeout is defined
+  // The maximum lifetime of downstream connection. The lifetime timeout is defined
   // as a period since downstream connection was established.
   // If not set, there is no lifetime timeout. When lifetime_timeout is reached the connection will
   // be closed. If the connection is an HTTP/2 connection a drain sequence will occur prior to
