@@ -414,7 +414,7 @@ void ConnectionManagerImpl::onConnectionLifetimeTimeout() {
   ENVOY_CONN_LOG(debug, "lifetime timeout", read_callbacks_->connection());
   stats_.named_.downstream_cx_lifetime_timeout_.inc();
   if (!codec_) {
-    // TODO(oleg): figure out if folowing is true for closing non-idle connections.
+    // TODO(oleg): figure out if following is true for closing non-idle connections.
     // No need to delay close after flushing since an idle timeout has already fired. Attempt to
     // write out buffered data one last time and issue a local close if successful.
     read_callbacks_->connection().close(Network::ConnectionCloseType::FlushWrite);
